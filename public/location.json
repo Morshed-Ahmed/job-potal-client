@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/hY4ZkPH/chris-karidis-nnzk-ZNYWHa-U-unsplash.jpg",
+    "name": "Paris, France",
+    "vacancy": "5",
+    "companies": "120"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/j6hNkXW/pedro-lastra-su-Rvdiw-P9-Pk-unsplash.jpg",
+    "name": "London, England",
+    "vacancy": "7 ",
+    "companies": "68"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/CMYs9n9/john-cameron-f-Gi-Jtgi2-RRg-unsplash.jpg",
+    "name": "New York, USA",
+    "vacancy": "9",
+    "companies": "80"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/Yb0YHNj/fons-heijnsbroek-pi0-Wm-HFDITU-unsplash.jpg",
+    "name": "Amsterdam, Holland",
+    "vacancy": "16",
+    "companies": "86"
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/Kj9zY7M/kylie-cheung-e-Onxgazh-Ta4-unsplash.jpg",
+    "name": "Copenhagen, Denmark",
+    "vacancy": "39",
+    "companies": "186"
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/qkM5n9B/stefan-widua-OAGa7kxf-DNY-unsplash.jpg",
+    "name": "berlin, germany",
+    "vacancy": "15",
+    "companies": "120"
+  }
+]

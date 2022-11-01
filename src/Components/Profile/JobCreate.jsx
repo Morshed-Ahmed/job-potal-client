@@ -15,11 +15,16 @@ import {
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import CloseIcon from "@mui/icons-material/Close";
+import { useLocation } from "react-router-dom";
 
 const JobCreate = () => {
   const [jobCategory, setJobCategory] = React.useState("");
   const [jobType, setJobType] = React.useState("");
   const [workplace, setWorkplace] = React.useState("");
+  // const [email, setEmail] = React.useState("");
+
+  const location = useLocation();
+  const userEmail = location.state;
 
   const handleChangeJobCategory = (event) => {
     setJobCategory(event.target.value);
@@ -69,8 +74,11 @@ const JobCreate = () => {
 
   //   const navigate = useNavigate();
   const onSubmit = async (data) => {
+    // console.log(userEmail.email);
     data.jobCategory = jobCategory;
     data.jobType = jobType;
+    data.email = userEmail.email;
+
     // console.log(data);
     // const token = localStorage.getItem("token");
 
@@ -94,7 +102,7 @@ const JobCreate = () => {
         console.log(error);
       });
 
-    console.log(job);
+    // console.log(job);
 
     // .then((inserted) => {
     //   if (inserted.insertedId) {

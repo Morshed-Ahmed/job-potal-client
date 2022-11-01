@@ -19,10 +19,10 @@ import Typography from "@mui/material/Typography";
 import WorkIcon from "@mui/icons-material/Work";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import { Stack } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import axios from "axios";
 
-const drawerWidth = 200;
+const drawerWidth = 245;
 
 function Dashboard(props) {
   // const [user, setUser] = React.useState();
@@ -71,26 +71,42 @@ function Dashboard(props) {
       <Divider />
       <List>
         {/* LIST ITEM */}
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <DashboardIcon />
-            </ListItemIcon>
-            <Typography sx={{ fontSize: "17px", fontWeight: "bold" }}>
-              Dashboard
-            </Typography>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Typography sx={{ fontSize: "17px", fontWeight: "bold" }}>
-              Jobs
-            </Typography>
-          </ListItemButton>
-        </ListItem>
+        <NavLink to={"dashboardIndex"}>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <Typography sx={{ fontSize: "17px", fontWeight: "bold" }}>
+                Dashboard
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        </NavLink>
+        <NavLink to={"allCandidate"}>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <Typography sx={{ fontSize: "17px", fontWeight: "bold" }}>
+                All Candidate
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        </NavLink>
+        <NavLink to={"allHiringManager"}>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <Typography sx={{ fontSize: "17px", fontWeight: "bold" }}>
+                All Hiring Manager
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        </NavLink>
       </List>
       <Divider />
     </div>
@@ -171,35 +187,7 @@ function Dashboard(props) {
         }}
       >
         <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
-          mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis
-          risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas
-          purus viverra accumsan in. In hendrerit gravida rutrum quisque non
-          tellus orci ac. Pellentesque nec nam aliquam sem et tortor. Habitant
-          morbi tristique senectus et. Adipiscing elit duis tristique
-          sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        <Outlet />
       </Box>
     </Box>
   );

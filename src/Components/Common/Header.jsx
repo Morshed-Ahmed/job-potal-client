@@ -69,6 +69,7 @@ const Header = () => {
     <AppBar position="static" color="appBarBg">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          {/* MD SCREEN LOGO */}
           <NavLink to={"/"} style={{ display: "flex", textDecoration: "none" }}>
             <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Typography
@@ -124,46 +125,105 @@ const Header = () => {
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))} */}
+
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">hello</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">hello</Typography>
+              </MenuItem>
             </Menu>
           </Box>
-          <NavLink style={{ display: "flex", textDecoration: "none" }} to={"/"}>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              // component="a"
-              // href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
+
+          {/* XS SCREEN LOGO */}
+          <NavLink
+            style={{
+              // display: "flex",
+              textDecoration: "none",
+              // backgroundColor: "blue",
+              // width: "100%",
+              margin: "auto",
+            }}
+            to={"/"}
+          >
+            <Stack
+              direction={"row"}
+              // sx={{ backgroundColor: "blue", width: "100%" }}
+              alignItems={"center"}
             >
-              JobPortal
-            </Typography>
-          </NavLink>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {/* {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+              <AdbIcon
+                sx={{ display: { xs: "flex", md: "none" }, textAlign: "" }}
+              />
+              <Typography
+                variant="h5"
+                noWrap
+                // component="a"
+                // href=""
+                sx={{
+                  // mr: 6,
+
+                  display: { xs: "flex", md: "none" },
+                  flexGrow: 1,
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
               >
-                {page}
+                JobPortal
+              </Typography>
+            </Stack>
+          </NavLink>
+
+          {/* MD SCREEN ROUTE */}
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {/* ALL JOB POST ROUTE */}
+            <NavLink style={{ textDecoration: "none" }} to={"/allPost"}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, display: "block" }}
+              >
+                Job Post
               </Button>
-            ))} */}
+            </NavLink>
+
+            {/* BLOG ROUTE */}
+            <NavLink style={{ textDecoration: "none" }} to={"/blog"}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, display: "block" }}
+              >
+                Blog
+              </Button>
+            </NavLink>
+
+            {/* ABOUT US ROUTE */}
+            <NavLink style={{ textDecoration: "none" }} to={"/about"}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, display: "block" }}
+              >
+                About Us
+              </Button>
+            </NavLink>
+
+            {/* CONTACT US ROUTE */}
+            <NavLink style={{ textDecoration: "none" }} to={"/contact"}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, display: "block" }}
+              >
+                Contact Us
+              </Button>
+            </NavLink>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Stack
-              spacing={2}
+              // spacing={2}
               direction="row"
-              sx={{ display: { xs: "none", md: "flex" } }}
+              // sx={{ display: { xs: "flex", md: "none" } }}
             >
               {user ? (
                 <Tooltip title="Open settings">
@@ -175,7 +235,11 @@ const Header = () => {
                   </IconButton>
                 </Tooltip>
               ) : (
-                <Stack spacing={2} direction="row">
+                <Stack
+                  sx={{ display: { md: "flex", xs: "none" } }}
+                  spacing={2}
+                  direction="row"
+                >
                   <NavLink to={"/register"} style={{ textDecoration: "none" }}>
                     <Button variant="outlined" color="primary">
                       Sign up

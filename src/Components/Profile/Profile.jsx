@@ -85,13 +85,24 @@ const Profile = () => {
                   </NavLink>
                 )}
 
-                <NavLink
+                {/* <NavLink
                   style={{ textDecoration: "none", color: "black" }}
                   to="address"
                   state={user}
                 >
                   <MenuItem>Address</MenuItem>
-                </NavLink>
+                </NavLink> */}
+
+                {admin === "hiring-manager" && (
+                  <NavLink
+                    style={{ textDecoration: "none", color: "black" }}
+                    to="myJobPost"
+                    state={user}
+                  >
+                    <MenuItem>My Job Post</MenuItem>
+                  </NavLink>
+                )}
+
                 <MenuItem>Logout</MenuItem>
               </MenuList>
             </Paper>

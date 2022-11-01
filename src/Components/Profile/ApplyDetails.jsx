@@ -23,7 +23,9 @@ const ApplyDetails = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:4242/jobs/manager/apply-details/${data}`)
+      .get(
+        `https://job-portal-api-black.vercel.app/jobs/manager/apply-details/${data}`
+      )
       .then((res) => {
         setApply(res.data.data);
         setLoading(false);

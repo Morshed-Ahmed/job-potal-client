@@ -99,7 +99,10 @@ const Apply = () => {
           };
 
           axios
-            .post(`http://localhost:4242/jobs/${datas._id}/apply`, apply)
+            .post(
+              `https://job-portal-api-black.vercel.app/jobs/${datas._id}/apply`,
+              apply
+            )
             .then((response) => {
               // console.log(response);
               setLoading(false);
